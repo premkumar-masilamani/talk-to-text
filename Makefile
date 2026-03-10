@@ -36,11 +36,43 @@ ui:
 
 .PHONY: build
 build:
-	@echo "Building for $(OS_NAME)-$(ARCH)..."
+ifeq ($(OS),darwin)
+	$(MAKE) build-mac
+else ifneq (,$(findstring mingw,$(OS)))
+	$(MAKE) build-windows
+else
+	$(MAKE) build-linux
+endif
+
+.PHONY: build-linux
+build-linux:
+	@echo "Building for linux-$(ARCH)..."
 	rm -rf dist build
 	pipenv run pyinstaller --noconfirm --clean --onefile --windowed --name talk-to-text \
-		--add-data "files/talk-to-text-icon.png$(SEP)files" \
+		--add-data "files/talk-to-text-icon.png:files" \
 		--icon "files/talk-to-text-icon.png" \
 		transcriber/ui_app.py
 	@echo "Packaging..."
-	cd dist && zip -9 "talk-to-text-$(OS_NAME)-$(ARCH).zip" talk-to-text$(EXE_EXT)
+	cd dist && zip -9 "talk-to-text-linux-$(ARCH).zip" talk-to-text
+
+.PHONY: build-mac
+build-mac:
+	@echo "Building for macos-$(ARCH)..."
+	rm -rf dist build
+	pipenv run pyinstaller --noconfirm --clean --onefile --windowed --name talk-to-text \
+		--add-data "files/talk-to-text-icon.png:files" \
+		--icon "files/talk-to-text-icon.png" \
+		transcriber/ui_app.py
+	@echo "Packaging..."
+	cd dist && zip -9 "talk-to-text-macos-$(ARCH).zip" talk-to-text
+
+.PHONY: build-windows
+build-windows:
+	@echo "Building for windows-$(ARCH)..."
+	rm -rf dist build
+	pipenv run pyinstaller --noconfirm --clean --onefile --windowed --name talk-to-text \
+		--add-data "files/talk-to-text-icon.png;files" \
+		--icon "files/talk-to-text-icon.png" \
+		transcriber/ui_app.py
+	@echo "Packaging..."
+	cd dist && powershell.exe -Command "Compress-Archive -Path talk-to-text.exe -DestinationPath talk-to-text-windows-$(ARCH).zip"

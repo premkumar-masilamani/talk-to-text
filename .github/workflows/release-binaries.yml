@@ -20,17 +20,17 @@ jobs:
           - os: windows-latest
             target: windows-x64
             architecture: x64
-            binary_name: talk-to-text.exe
+            app_name: Talk to Text
             archive_name: talk-to-text-windows-x64.zip
-          - os: macos-14
+          - os: macos-13
             target: macos-x64
             architecture: x64
-            binary_name: talk-to-text
+            app_name: Talk to Text
             archive_name: talk-to-text-macos-x64.zip
           - os: macos-14
             target: macos-arm64
             architecture: arm64
-            binary_name: talk-to-text
+            app_name: Talk to Text
             archive_name: talk-to-text-macos-arm64.zip
 
     steps:
@@ -51,7 +51,7 @@ jobs:
           pipenv install --system --deploy
           pip install pyinstaller
 
-      - name: Build standalone UI binary
+      - name: Build desktop app package
         shell: bash
         run: |
           if [ "${{ runner.os }}" == "Windows" ]; then
@@ -59,34 +59,34 @@ jobs:
           else
             SEP=":"
           fi
-          pyinstaller --noconfirm --clean --onefile --windowed --name talk-to-text \
+          pyinstaller --noconfirm --clean --windowed --name "${{ matrix.app_name }}" \
             --add-data "files/talk-to-text-icon.png${SEP}files" \
             --icon "files/talk-to-text-icon.png" \
             transcriber/ui_app.py
 
-      - name: Verify binary exists (Windows)
+      - name: Verify app package exists (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          if (-not (Test-Path "dist/${{ matrix.binary_name }}")) {
-            throw "Expected binary dist/${{ matrix.binary_name }} was not generated."
+          if (-not (Test-Path "dist/${{ matrix.app_name }}/${{ matrix.app_name }}.exe")) {
+            throw "Expected app dist/${{ matrix.app_name }}/${{ matrix.app_name }}.exe was not generated."
           }
 
-      - name: Verify binary exists (macOS)
+      - name: Verify app bundle exists (macOS)
         if: runner.os != 'Windows'
-        run: test -f "dist/${{ matrix.binary_name }}"
+        run: test -d "dist/${{ matrix.app_name }}.app"
 
-      - name: Package binary (Windows)
+      - name: Package app folder (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          Compress-Archive -Path "dist/${{ matrix.binary_name }}" -DestinationPath "dist/${{ matrix.archive_name }}"
+          Compress-Archive -Path "dist/${{ matrix.app_name }}" -DestinationPath "dist/${{ matrix.archive_name }}"
 
-      - name: Package binary (macOS)
+      - name: Package app bundle (macOS)
         if: runner.os != 'Windows'
         run: |
           cd dist
-          zip -9 "${{ matrix.archive_name }}" "${{ matrix.binary_name }}"
+          ditto -c -k --sequesterRsrc --keepParent "${{ matrix.app_name }}.app" "${{ matrix.archive_name }}"
 
       - name: Upload packaged artifact
         uses: actions/upload-artifact@v4
