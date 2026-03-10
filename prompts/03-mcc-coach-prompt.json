@@ -217,34 +217,13 @@
       },
       {
         "id": "section3",
-        "title": "MCC-Level Distinctions & Hallmarks",
-        "instructions": [
-          "Identify and list specific moments from the transcript that clearly reflect these **hallmark MCC indicators**. For each indicator, provide direct quotes from the transcript and a brief explanation of how the quote demonstrates the indicator. This section specifically assesses the *quality and depth* of the competency demonstration.",
-          "- **Deep Integration & Embodiment**: The competencies are seamlessly woven into the fabric of the session, appearing effortless, organic, and integrated rather than a checklist.",
-          "- **Profound Presence & Authenticity**: Coach is unequivocally present, demonstrating unwavering focus, genuine curiosity, and a deep connection to the client's unfolding process. Coach's true self is present, without agenda.",
-          "- **Artistry and Nuance**: Interventions are highly nuanced, precisely tailored to the client's unique needs, context, energy, and learning style, often anticipatory rather than reactive.",
-          "- **Client-Led & Client-Empowering**: The client consistently and demonstrably drives the agenda, pace, insights, and learning. The coach's role is almost invisible, amplifying the client's voice and empowering their discovery.",
-          "- **Holistic Awareness**: Coach demonstrates a profound understanding of the client as a whole person, acknowledging and implicitly working with their identity, context, experiences, values, beliefs, emotions, and aspirations.",
-          "- **Trust in Client's Resourcefulness (Unwavering)**: Coach holds an absolute and unwavering belief in the client's inherent resourcefulness, wisdom, and capacity for self-direction, leading to an absence of any suggestion, advice, or interpretation.",
-          "- **Systemic Perspective (Implicit)**: An implicit awareness of the client's place within larger systems (relationships, work, culture) influences understanding and powerful questions without making the session systemic coaching.",
-          "- **Minimal & Precise Language**: Coach evokes profound insight through minimal yet incredibly precise and impactful language, often using the client's own words or metaphors.",
-          "- **Deep Co-Creation**: Coach invites profound shared authorship of insight, direction, and learning, blurring the lines of who generated what.",
-          "- **Belief & Identity Work (Consistent & Deep)**: Coach consistently invites exploration at identity, values, purpose, and limiting belief levels, facilitating deep shifts.",
-          "- **Silence as Catalyst**: Coach leverages silence not just for reflection, but as a powerful, intentional tool to deepen processing, allow insights to land, or create space for emergence.",
-          "- **Energetic Tracking & Mirroring**: Coach subtly tracks, mirrors, and evokes shifts in client energy, mood, pace, and language, using it as a source of information.",
-          "- **Language Calibration & Precision**: Coach masterfully uses the client’s exact metaphors, unique phrasing, or internal structure of language to deepen insight and connect to the client's inner world.",
-          "- **Holding the Space for Emergence**: Coach is comfortable with ambiguity and allows insights to emerge from the client without prompting or leading."
-        ]
-      },
-      {
-        "id": "section4",
         "title": "Client Shifts & Insights",
         "instructions": [
           "List any client-generated insights or shifts observed in the transcript (e.g., new awareness, emotional release, or perspective change). Provide direct quotes from the client for each. Explain how the coach's preceding intervention facilitated this."
         ]
       },
       {
-        "id": "section5",
+        "id": "section4",
         "title": "Use of Metaphor, Somatics & Language",
         "instructions": [
           "Analyze the coach's use of metaphor, somatics, and language based _only_ on the transcript:",
@@ -252,6 +231,23 @@
           "- Assess whether the coach reflected, deepened, or explored these metaphors. Provide specific examples of how the coach leveraged (or missed leveraging) them.",
           "- Track any somatic language or cues (explicitly stated or implicitly indicated, e.g., “I feel a knot in my stomach,” \"my voice changed,\" \"a visible shift in posture\") used by the client and determine if the coach acknowledged, leveraged, or inquired into these for deeper awareness.",
           "- Determine if the coach used _language as transformation_ (e.g., reframing, powerful questions that subtly shift perspective, linguistic precision that uncovers new meaning) rather than just summary or content-level questions. Provide examples of such transformative language from the coach."
+        ]
+      },
+      {
+        "id": "section5",
+        "title": "NLP Neurological Levels Mapping (Dilts Model)",
+        "instructions": [
+          "Map client statements from the transcript to the following Neurological Levels. Provide direct quotes for each level identified.",
+          "- **Environment (Where/When)**",
+          "- **Behavior (What)**",
+          "- **Capability (How)**",
+          "- **Belief/Value (Why)**",
+          "- **Identity (Who)**",
+          "- **Purpose/Vision (Why else/For what higher purpose)**",
+          "Then, assess whether the coach:",
+          "- Consistently matched the client's level in their responses and questions, demonstrating acute listening to the client's current focus. Provide examples.",
+          "- Skillfully helped the client shift upward in levels (e.g., from Capability to Identity or Purpose), facilitating deeper awareness and systemic understanding. Provide examples of these upward shifts.",
+          "- Missed deeper opportunities to shift vertical levels. Provide specific transcript sections where this occurred and suggest an MCC-level question that could have facilitated the shift."
         ]
       },
       {
@@ -270,19 +266,23 @@
       },
       {
         "id": "section7",
-        "title": "NLP Neurological Levels Mapping (Dilts Model)",
+        "title": "MCC-Level Distinctions & Hallmarks",
         "instructions": [
-          "Map client statements from the transcript to the following Neurological Levels. Provide direct quotes for each level identified.",
-          "- **Environment (Where/When)**",
-          "- **Behavior (What)**",
-          "- **Capability (How)**",
-          "- **Belief/Value (Why)**",
-          "- **Identity (Who)**",
-          "- **Purpose/Vision (Why else/For what higher purpose)**",
-          "Then, assess whether the coach:",
-          "- Consistently matched the client's level in their responses and questions, demonstrating acute listening to the client's current focus. Provide examples.",
-          "- Skillfully helped the client shift upward in levels (e.g., from Capability to Identity or Purpose), facilitating deeper awareness and systemic understanding. Provide examples of these upward shifts.",
-          "- Missed deeper opportunities to shift vertical levels. Provide specific transcript sections where this occurred and suggest an MCC-level question that could have facilitated the shift."
+          "Identify and list specific moments from the transcript that clearly reflect these **hallmark MCC indicators**. For each indicator, provide direct quotes from the transcript and a brief explanation of how the quote demonstrates the indicator. This section specifically assesses the *quality and depth* of the competency demonstration.",
+          "- **Deep Integration & Embodiment**: The competencies are seamlessly woven into the fabric of the session, appearing effortless, organic, and integrated rather than a checklist.",
+          "- **Profound Presence & Authenticity**: Coach is unequivocally present, demonstrating unwavering focus, genuine curiosity, and a deep connection to the client's unfolding process. Coach's true self is present, without agenda.",
+          "- **Artistry and Nuance**: Interventions are highly nuanced, precisely tailored to the client's unique needs, context, energy, and learning style, often anticipatory rather than reactive.",
+          "- **Client-Led & Client-Empowering**: The client consistently and demonstrably drives the agenda, pace, insights, and learning. The coach's role is almost invisible, amplifying the client's voice and empowering their discovery.",
+          "- **Holistic Awareness**: Coach demonstrates a profound understanding of the client as a whole person, acknowledging and implicitly working with their identity, context, experiences, values, beliefs, emotions, and aspirations.",
+          "- **Trust in Client's Resourcefulness (Unwavering)**: Coach holds an absolute and unwavering belief in the client's inherent resourcefulness, wisdom, and capacity for self-direction, leading to an absence of any suggestion, advice, or interpretation.",
+          "- **Systemic Perspective (Implicit)**: An implicit awareness of the client's place within larger systems (relationships, work, culture) influences understanding and powerful questions without making the session systemic coaching.",
+          "- **Minimal & Precise Language**: Coach evokes profound insight through minimal yet incredibly precise and impactful language, often using the client's own words or metaphors.",
+          "- **Deep Co-Creation**: Coach invites profound shared authorship of insight, direction, and learning, blurring the lines of who generated what.",
+          "- **Belief & Identity Work (Consistent & Deep)**: Coach consistently invites exploration at identity, values, purpose, and limiting belief levels, facilitating deep shifts.",
+          "- **Silence as Catalyst**: Coach leverages silence not just for reflection, but as a powerful, intentional tool to deepen processing, allow insights to land, or create space for emergence.",
+          "- **Energetic Tracking & Mirroring**: Coach subtly tracks, mirrors, and evokes shifts in client energy, mood, pace, and language, using it as a source of information.",
+          "- **Language Calibration & Precision**: Coach masterfully uses the client’s exact metaphors, unique phrasing, or internal structure of language to deepen insight and connect to the client's inner world.",
+          "- **Holding the Space for Emergence**: Coach is comfortable with ambiguity and allows insights to emerge from the client without prompting or leading."
         ]
       },
       {
@@ -310,17 +310,6 @@
       "formatting": [
         "Use Markdown for headings, bullet points, and to format direct quotes clearly",
         "Remove hyperlinks, references and citations from the output."
-      ]
-    },
-    "metadata": {
-      "created_date": "2025-11-15",
-      "standards": [
-        "ICF Core Values",
-        "ICF Code of Ethics (2025)",
-        "Updated ICF Core Competencies (2019)",
-        "ICF CORE COMPETENCIES RATING LEVELS",
-        "ICF Professional Certified Coach (PCC) Markers",
-        "Referring a Client to Therapy: A Set of Guidelines (2018)"
       ]
     }
   }

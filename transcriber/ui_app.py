@@ -315,8 +315,8 @@ class TranscriberWindow(QtWidgets.QMainWindow):
         self.setWindowTitle("Talk to Text")
         self.resize(960, 640)
         self.setMinimumSize(920, 600)
-        self.hardware_profile = detect_hardware_profile()
-        self.model_spec = select_model_for_hardware(self.hardware_profile)
+        self.hardware_profile = None
+        self.model_spec = select_model_for_hardware(None)
 
         self.items: dict[Path, ItemState] = {}
         self.rows: dict[Path, QtWidgets.QTreeWidgetItem] = {}
@@ -342,7 +342,7 @@ class TranscriberWindow(QtWidgets.QMainWindow):
 
         self._build_ui()
         self._setup_logging()
-        self._start_initial_setup()
+        QtCore.QTimer.singleShot(0, self._start_initial_setup)
 
     def _build_ui(self):
         central = QtWidgets.QWidget()
@@ -763,6 +763,7 @@ class TranscriberWindow(QtWidgets.QMainWindow):
             self.list_widget.addTopLevelItem(row)
 
     def _system_profile_rows(self) -> list[tuple[str, str]]:
+        self._ensure_hardware_profile()
         min_ram_gb = min_ram_for_model(self.model_spec.model_id)
         return [
             ("OS", self.hardware_profile.system),
@@ -775,6 +776,12 @@ class TranscriberWindow(QtWidgets.QMainWindow):
             ("Whisper CLI", self._resolve_whisper_binary_for_profile()),
             ("ffmpeg", self._resolve_ffmpeg_for_profile()),
         ]
+
+    def _ensure_hardware_profile(self):
+        if self.hardware_profile is not None:
+            return
+        self.hardware_profile = detect_hardware_profile()
+        self.model_spec = select_model_for_hardware(self.hardware_profile)
 
     def _copy_diagnostics_to_clipboard(self):
         system_lines = [
@@ -1279,6 +1286,17 @@ class TranscriberWindow(QtWidgets.QMainWindow):
         super().closeEvent(event)
 
 
+def resource_path(relative_path):
+    """Get absolute path to resource, works for dev and for PyInstaller"""
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 def main():
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle("Fusion")
@@ -1292,10 +1310,20 @@ def main():
     palette.setColor(QtGui.QPalette.ToolTipText, QtGui.QColor("#1f2937"))
     app.setPalette(palette)
 
+    icon_path = resource_path(os.path.join("files", "talk-to-text-icon.png"))
+    if os.path.exists(icon_path):
+        app.setWindowIcon(QtGui.QIcon(icon_path))
+
     window = TranscriberWindow()
     window.show()
     sys.exit(app.exec())
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"CRITICAL ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+        input("Press Enter to exit...")
