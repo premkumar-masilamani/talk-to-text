@@ -51,9 +51,9 @@ You can use the generated transcript and the appropriate prompt from the `prompt
 
 The `prompts/` directory contains several JSON files, each designed to elicit specific types of feedback from an AI:
 
--   `01-acc-coach-prompt.json`: Focuses on foundational coaching competencies as per ACC standards.
--   `02-pcc-coach-prompt.json`: Aims for more advanced coaching skills and nuanced feedback aligned with PCC.
--   `03-mcc-coach-prompt.json`: For expert-level coaching analysis, adhering to MCC criteria.
+-   `01-acc-coach-prompt.json`: Focuses on foundational coaching competencies as per ACC standards, providing a baseline evaluation covering core ICF competencies and ethical practice.
+-   `02-pcc-coach-prompt.json`: Aims for more advanced coaching skills and nuanced feedback aligned with PCC standards. This prompt builds upon the ACC evaluation by including additional sections for NLP Neurological Levels Mapping and Belief & Identity Structure Work, requiring a deeper analysis of the coach's techniques.
+-   `03-mcc-coach-prompt.json`: For expert-level coaching analysis, adhering to MCC criteria. This is the most comprehensive evaluation, incorporating all elements of the PCC prompt and adding a section for "MCC-Level Distinctions & Hallmarks," which assesses the subtle and masterful qualities of highly experienced coaching.
 -   `client-prompt.json`: Extracts key takeaways, action items, and growth areas directly relevant to the client, providing them with actionable insights.
 
-Each JSON prompt file contains detailed instructions that guide the AI on the structure, tone, and focus of the feedback it should generate.
+Each JSON prompt file contains detailed instructions that guide the AI on the structure, tone, and focus of the feedback it should generate. The progression from ACC to PCC to MCC prompts reflects an increasing expectation in the depth, nuance, and theoretical frameworks applied to the coaching evaluation.
