@@ -1,3 +1,0 @@
-Don't write programs or scripts. Simply read the uploaded coaching transcript and evaluate it based on the uploaded prompt. All sections in the prompt are mandatory and the output should appear in the same order. Write the output to a file with the same name as the input file but with an .md extension.
-
-Re-evaluate the uploaded coaching transcript and evaluate it based on this new prompt. Write the output to a file with the same name as the input file but with an .md extension.
